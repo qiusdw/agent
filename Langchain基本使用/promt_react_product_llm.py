@@ -182,12 +182,12 @@ class CustomOutputParser(AgentOutputParser):
             tool=action, tool_input=action_input.strip(" ").strip('"'), log=llm_output
         )
 
-# 设置通义千问API密钥
-DASHSCOPE_API_KEY = 'sk-41a04e19351b45a79dd0aeb9262f71d6'
-
 if __name__ == "__main__":
+    # 从环境变量获取通义千问 API 密钥，避免在代码中暴露真实密钥
+    import os
+    api_key = os.environ.get("DASHSCOPE_API_KEY")
     # 定义LLM
-    llm = Tongyi(model_name="qwen-turbo", dashscope_api_key=DASHSCOPE_API_KEY)  # 使用通义千问qwen-turbo模型
+    llm = Tongyi(model_name="qwen-turbo", dashscope_api_key=api_key)  # 使用通义千问qwen-turbo模型
     # 自有数据
     tesla_data_source = TeslaDataSource(llm)
     # 定义的Tools
