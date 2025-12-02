@@ -67,7 +67,7 @@ class WeatherTool(BaseTool):
     
     def get_weather_from_gaode(self, location: str, adcode: str = None) -> str:
         """调用高德地图API查询天气"""
-        gaode_api_key = "bc93a460d0804b38bb544bf793078638"  # 高德API Key
+        gaode_api_key = "***"  # 高德API Key
         base_url = "https://restapi.amap.com/v3/weather/weatherInfo"
         
         params = {
