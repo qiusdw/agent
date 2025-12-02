@@ -5,7 +5,7 @@ import os
 # 设置 DashScope API Key
 dashscope.api_key = os.getenv("DASHSCOPE_API_KEY")
 
-# 高德天气 API 的 天气工具定义（JSON 格式）
+# 高德天气 API 的  天气工具定义（JSON 格式）
 weather_tool = {
     "type": "function",
     "function": {
